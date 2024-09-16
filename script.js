@@ -6,7 +6,7 @@ window.addEventListener("resize", checkBoxes); // Para garantir que o cálculo s
 checkBoxes();
 
 function checkBoxes(){
-    const triggerBtn = window.innerHeight / 1.2; // Adaptação para diferentes tamanhos de tela
+    const triggerBtn = window.innerHeight / 0.6; // Adaptação para diferentes tamanhos de tela
 
     boxes.forEach(box => {
         const boxTop = box.getBoundingClientRect().top; // Mantendo getBoundingClientRect
