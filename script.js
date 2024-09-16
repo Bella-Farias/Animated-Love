@@ -24,7 +24,7 @@ function checkBoxes(){
     const triggerBtn = window.innerHeight / 1.2;
 
     boxes.forEach(box => {
-        const boxTop = box.getBoundingClientRect().top;
+        const boxTop = box.offsetTop - window.scrollY;
 
         if(boxTop < triggerBtn){
             box.classList.add("show");
