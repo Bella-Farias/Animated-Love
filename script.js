@@ -1,20 +1,19 @@
 const boxes = document.querySelectorAll(".box");
 
-window.addEventListener("scroll", checkBoxes);
-window.addEventListener("resize", checkBoxes); // Para garantir que o cálculo seja atualizado quando a tela redimensionar
-
-checkBoxes();
-
-function checkBoxes(){
-    const triggerBtn = window.innerHeight / 1.2; // Adaptação para diferentes tamanhos de tela
+function checkBoxes() {
+    const triggerBottom = window.innerHeight + window.scrollY;
 
     boxes.forEach(box => {
-        const boxTop = box.getBoundingClientRect().top; // Mantendo getBoundingClientRect
-        
-        if (boxTop < triggerBtn) {
+        const boxTop = box.offsetTop;
+
+        if (boxTop < triggerBottom) {
             box.classList.add("show");
         } else {
             box.classList.remove("show");
         }
     });
+
+    requestAnimationFrame(checkBoxes); // Chama a função de forma contínua para sempre verificar
 }
+
+requestAnimationFrame(checkBoxes); // Inicia o loop de verificação contínua
