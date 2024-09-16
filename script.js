@@ -1,6 +1,7 @@
 const boxes = document.querySelectorAll(".box");
 
 window.addEventListener("scroll", checkBoxes);
+window.addEventListener("touchmove", checkBoxes);
 
 checkBoxes();
 
