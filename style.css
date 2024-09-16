@@ -63,6 +63,7 @@ h1{
     body{
         width: 90%;
         margin: auto;
+        overflow-x: hidden;
     }
     
     h1{
