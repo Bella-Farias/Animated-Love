@@ -1,35 +1,20 @@
 const boxes = document.querySelectorAll(".box");
 
 window.addEventListener("scroll", checkBoxes);
-window.addEventListener("resize", checkBoxes);
+window.addEventListener("resize", checkBoxes); // Para garantir que o cálculo seja atualizado quando a tela redimensionar
 
 checkBoxes();
 
 function checkBoxes(){
-    const triggerBtn = window.innerHeight / 5 * 4.3;
+    const triggerBtn = window.innerHeight / 1.2; // Adaptação para diferentes tamanhos de tela
 
     boxes.forEach(box => {
-        const boxTop = box.getBoundingClientRect().top;
-
-        if(boxTop < triggerBtn){
+        const boxTop = box.getBoundingClientRect().top; // Mantendo getBoundingClientRect
+        
+        if (boxTop < triggerBtn) {
             box.classList.add("show");
-        }else{
+        } else {
             box.classList.remove("show");
         }
-    })
-}
-
-
-function checkBoxes(){
-    const triggerBtn = window.innerHeight / 1.2;
-
-    boxes.forEach(box => {
-        const boxTop = box.offsetTop - window.scrollY;
-
-        if(boxTop < triggerBtn){
-            box.classList.add("show");
-        }else{
-            box.classList.remove("show");
-        }
-    })
+    });
 }
