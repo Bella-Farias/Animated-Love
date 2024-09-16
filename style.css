@@ -61,8 +61,6 @@ h1{
 
 @media screen and (max-width: 1005px){
     body{
-        width: 90%;
-        margin: auto;
         overflow-x: hidden;
     }
     
